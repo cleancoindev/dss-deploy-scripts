@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+# shellcheck source=lib/common.sh
+. "$LIB_DIR/common.sh"
+
+# Get config variables
+CONFIG_FILE="$OUT_DIR/config.json"
+# Get addresses
+loadAddresses
+
+{ test "$1" != "flap" && test "$1" != "flop"; } && exit 1
+
+log "SET $(toUpper "$1") TAU:"
+
+# Set tau
+tau=$(jq -r ".$1_tau | values" "$CONFIG_FILE")
+if [[ "$tau" != "" ]]; then
+    calldata="$(seth calldata 'file(address,address,address,bytes32,uint256)' "$MCD_PAUSE" "$MCD_GOV_ACTIONS" "$(eval echo "\$MCD_$(toUpper "$1")")" "$(seth --to-bytes32 "$(seth --from-ascii "tau")")" "$tau")"
+    sethSend "$PROXY_DEPLOYER" 'execute(address,bytes memory)' "$PROXY_PAUSE_ACTIONS" "$calldata"
+fi

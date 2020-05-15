@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+# shellcheck source=lib/common.sh
+. "$LIB_DIR/common.sh"
+
+# Get config variables
+CONFIG_FILE="$OUT_DIR/config.json"
+# Get addresses
+loadAddresses
+
+log "SET ILKS PRICE:"
+
+tokens=$(jq -r ".tokens | keys_unsorted[]" "$CONFIG_FILE")
+for token in $tokens; do
+    # If it is a value set the price
+    pipAddr=$(jq -r ".tokens.${token} | .import.pip | values" "$CONFIG_FILE")
+    if [[ "$pipAddr" == "" ]]; then
+        type=$(jq -r ".tokens.${token} | .pipDeploy | .type | values" "$CONFIG_FILE")
+        if [[ "$type" == "value" ]]; then
+            price=$(jq -r ".tokens.${token} | .pipDeploy | .price" "$CONFIG_FILE")
+            "$LIBEXEC_DIR/setters/set-price" "$token" "$price"
+        fi
+    fi
+done

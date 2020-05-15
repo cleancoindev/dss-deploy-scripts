@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+# shellcheck source=lib/common.sh
+. "$LIB_DIR/common.sh"
+
+# Get config variables
+CONFIG_FILE="$OUT_DIR/config.json"
+# Get addresses
+loadAddresses
+
+log "SET SPOTTER POKE:"
+
+tokens=$(jq -r ".tokens | keys_unsorted[]" "$CONFIG_FILE")
+for token in $tokens; do
+    pipAddr=$(jq -r ".tokens.${token} | .import.pip | values" "$CONFIG_FILE")
+    type=$(jq -r ".tokens.${token} | .pipDeploy | .type | values" "$CONFIG_FILE")
+
+    SET=1
+    if [[ "$pipAddr" != "" || "$type" == "median" ]]; then
+        SET=$(seth call "$(eval echo "\$PIP_${token}")" 'bud(address)(uint256)' "$MCD_SPOT" | sed 's/^0*//')
+    fi
+
+    if [[ "$SET" == 1 ]]; then
+        ilks=$(jq -r ".tokens.${token}.ilks | keys_unsorted[]" "$CONFIG_FILE")
+        for ilk in $ilks; do
+            sethSend "$MCD_SPOT" 'poke(bytes32)' "$(seth --to-bytes32 "$(seth --from-ascii "${token}-${ilk}")")"
+        done
+    fi
+
+    if [[ -n "$MIGRATION" ]]; then
+        sethSend "$MCD_SPOT" 'poke(bytes32)' "$(seth --to-bytes32 "$(seth --from-ascii "SAI")")"
+    fi
+done
