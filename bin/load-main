@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# dss mainnet deployment
+# tss mainnet deployment
 # Wed Nov 13 2019
 
 export DEPLOYER=0xdDb108893104dE4E1C6d0E47c42237dB4E617ACc
