@@ -1,6 +1,6 @@
-# DSS deployment scripts
+# TSS deployment scripts
 
-A set of scripts that deploy [dss](http://github.com/makerdao/dss) to an
+A set of scripts that deploy [tss](http://github.com/cleancoindev/TaoStabilitySystem) to an
 Ethereum chain of your choosing.
 
 ## Description
@@ -136,7 +136,7 @@ Currently, there are default config files for 3 networks:
 
 ### Deploy on local testchain with default config file
 
-`dss-deploy testchain`
+`tss-deploy testchain`
 
 It is possible to pass a value to define a testing scenario via `-c` flag (e.g. `dss-deploy testchain -c crash-bite`)
 
@@ -146,15 +146,15 @@ The only case currently available is:
 
 ### Deploy on Kovan with default config file
 
-`dss-deploy kovan`
+`tss-deploy kovan`
 
 ### Deploy on Mainnet with default config file
 
-`dss-deploy main`
+`tss-deploy main`
 
 ### Deploy on any network passing a custom config file
 
-`dss-deploy <NETWORK> -f <CONFIG_FILE_PATH>`
+`tss-deploy <NETWORK> -f <CONFIG_FILE_PATH>`
 
 ### Output
 
@@ -185,7 +185,7 @@ nix-shell --pure
 You can even run deploy scripts without having to clone this repo:
 
 ```
-nix run -f https://github.com/makerdao/dss-deploy-scripts/tarball/master -c dss-deploy testchain
+nix run -f https://github.com/cleancoindev/tss-deploy-scripts/tarball/master -c dss-deploy testchain
 ```
 
 Dependencies are managed through a central repository referenced in
@@ -211,7 +211,7 @@ dapp2nix clone-recursive contracts
 
 ## Additional Documentation
 
-- `dss-deploy` [source code](https://github.com/makerdao/dss-deploy)
+- `tss-deploy` [source code](https://github.com/cleancoindev/tss-deploy)
 - `dss` is documented in the [wiki](https://github.com/makerdao/dss/wiki) and in [DEVELOPING.md](https://github.com/makerdao/dss/blob/master/DEVELOPING.md)
 
 ## TODO
