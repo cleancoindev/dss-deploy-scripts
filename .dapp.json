@@ -223,7 +223,7 @@
         "name": "tss-cdp-manager-ddd0f75",
         "ref": "HEAD",
         "rev": "ddd0f755735fa336e7f5ad7471163a18e0ba1f21",
-        "url": "https://github.com/makerdao/tss-cdp-manager"
+        "url": "https://github.com/cleancoindev/tss-cdp-manager"
       }
     },
     "tss-deploy-pause-proxy-actions_496d775": {
@@ -236,7 +236,7 @@
         "name": "tss-deploy-pause-proxy-actions-496d775",
         "ref": "HEAD",
         "rev": "496d775e9ed05f3011a4bb1cf669c80541ce04c9",
-        "url": "https://github.com/makerdao/tss-deploy-pause-proxy-actions"
+        "url": "https://github.com/cleancoindev/tss-deploy-pause-proxy-actions"
       }
     },
     "tss-deploy_679a078": {
@@ -256,7 +256,7 @@
         "name": "tss-deploy-679a078",
         "ref": "HEAD",
         "rev": "679a07876d433240d0c92b65bcddd4aa00082728",
-        "url": "https://github.com/makerdao/tss-deploy"
+        "url": "https://github.com/cleancoindev/tss-deploy"
       }
     },
     "tss-proxy-actions_180a5f4": {
@@ -270,7 +270,7 @@
         "name": "tss-proxy-actions-180a5f4",
         "ref": "HEAD",
         "rev": "180a5f4b130df9d97932471d17602c86416ede13",
-        "url": "https://github.com/makerdao/tss-proxy-actions"
+        "url": "https://github.com/cleancoindev/tss-proxy-actions"
       }
     },
     "tss_4433006": {
@@ -284,7 +284,7 @@
         "name": "tss-4433006",
         "ref": "HEAD",
         "rev": "44330065999621834b08de1edf3b962f6bbd74c6",
-        "url": "https://github.com/makerdao/tss"
+        "url": "https://github.com/cleancoindev/tss"
       }
     },
     "erc20_f322aac": {
@@ -405,18 +405,18 @@
         "url": "https://github.com/makerdao/sai"
       }
     },
-    "scd-mcd-migration_e7e7da5": {
+    "sct-mct-migration_e7e7da5": {
       "deps": {
         "ds-test": "ds-test_a4e4005",
         "tss-cdp-manager": "tss-cdp-manager_ddd0f75",
         "sai": "sai_fe18033"
       },
-      "name": "scd-mcd-migration",
+      "name": "sct-mct-migration",
       "repo": {
-        "name": "scd-mcd-migration-e7e7da5",
+        "name": "sct-mct-migration-e7e7da5",
         "ref": "HEAD",
         "rev": "e7e7da53a566a579dc4bbbe3653562f0e8a51c29",
-        "url": "https://github.com/makerdao/scd-mcd-migration"
+        "url": "https://github.com/cleancoindev/sct-mct-migration"
       }
     },
     "testchain-medians_7f457c3": {
@@ -442,7 +442,7 @@
         "name": "token-faucet-34a44c5",
         "ref": "HEAD",
         "rev": "34a44c5314d9f1d8dce346d4853eb78823fc1061",
-        "url": "https://github.com/makerdao/token-faucet"
+        "url": "https://github.com/cleancoindev/token-faucet"
       }
     },
     "vote-proxy_3c4f8dd": {
@@ -469,7 +469,7 @@
       "multicall": "multicall_df1e59d",
       "osm": "osm_0399d52",
       "osm-mom": "osm-mom_cca3967",
-      "scd-mcd-migration": "scd-mct-migration_e7e7da5",
+      "sct-mct-migration": "sct-mct-migration_e7e7da5",
       "testchain-medians": "testchain-medians_7f457c3",
       "token-faucet": "token-faucet_34a44c5",
       "vote-proxy": "vote-proxy_3c4f8dd"
