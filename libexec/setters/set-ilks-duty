@@ -11,7 +11,7 @@ loadAddresses
 log "SET ILKS DUTY:"
 
 setDuty() {
-    calldata="$(seth calldata 'dripAndFile(address,address,address,bytes32,bytes32,uint256)' "$MCD_PAUSE" "$MCD_GOV_ACTIONS" "$MCD_JUG" "$(seth --to-bytes32 "$(seth --from-ascii "$1")")" "$(seth --to-bytes32 "$(seth --from-ascii "duty")")" "$2")"
+    calldata="$(seth calldata 'dripAndFile(address,address,address,bytes32,bytes32,uint256)' "$MCT_PAUSE" "$MCT_GOV_ACTIONS" "$MCT_JUG" "$(seth --to-bytes32 "$(seth --from-ascii "$1")")" "$(seth --to-bytes32 "$(seth --from-ascii "duty")")" "$2")"
     sethSend "$PROXY_DEPLOYER" 'execute(address,bytes memory)' "$PROXY_PAUSE_ACTIONS" "$calldata"
 }
 
