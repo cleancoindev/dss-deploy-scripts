@@ -17,8 +17,8 @@ for token in $tokens; do
     if [[ "$pipAddr" != "" || "$type" == "median" ]]; then
         # Whitelist Spotter in OSM or in Median only if DEPLOYER has permission to do it
         if [[ "$(seth call "$(eval echo "\$PIP_${token}")" 'wards(address)(uint256)' "$ETH_FROM" | sed 's/^0*//')" == 1 ]]; then
-            sethSend "$(eval echo "\$PIP_${token}")" 'kiss(address)' "$MCD_SPOT"
-            sethSend "$(eval echo "\$PIP_${token}")" 'kiss(address)' "$MCD_END"
+            sethSend "$(eval echo "\$PIP_${token}")" 'kiss(address)' "$MCT_SPOT"
+            sethSend "$(eval echo "\$PIP_${token}")" 'kiss(address)' "$MCT_END"
         fi
     fi
 done
