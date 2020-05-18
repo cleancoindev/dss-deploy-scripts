@@ -180,7 +180,7 @@ if [[ -n "$SAI_TUB" && -n "$ethAdapterAddr" ]]; then
     sethSend "$PIP_SAI" 'setOwner(address)' "$MCT_PAUSE_PROXY"
 
     # Deploy SctMctMigration
-    MIGRATION=$(dappCreate scd-mcd-migration SctMctMigration "$SAI_TUB" "$CDP_MANAGER" "$MCT_JOIN_SAI" "$ethAdapterAddr" "$MCT_JOIN_TAO")
+    MIGRATION=$(dappCreate sct-mct-migration SctMctMigration "$SAI_TUB" "$CDP_MANAGER" "$MCT_JOIN_SAI" "$ethAdapterAddr" "$MCT_JOIN_TAO")
     log "MIGRATION=$MIGRATION"
 
     # Rely Migration contract to access the SAI Adapter
@@ -193,7 +193,7 @@ if [[ -n "$SAI_TUB" && -n "$ethAdapterAddr" ]]; then
     sethSend "$MCT_DEPLOY" 'releaseAuthFlip(bytes32)' "$(seth --to-bytes32 "$(seth --from-ascii "SAI")")"
 
     # Deploy MigrationProxyActions to use migrate function through DSProxy
-    MIGRATION_PROXY_ACTIONS=$(dappCreate scd-mcd-migration MigrationProxyActions)
+    MIGRATION_PROXY_ACTIONS=$(dappCreate sct-mct-migration MigrationProxyActions)
     log "MIGRATION_PROXY_ACTIONS=$MIGRATION_PROXY_ACTIONS"
 fi
 
