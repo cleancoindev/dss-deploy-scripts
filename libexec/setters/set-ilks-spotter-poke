@@ -17,17 +17,17 @@ for token in $tokens; do
 
     SET=1
     if [[ "$pipAddr" != "" || "$type" == "median" ]]; then
-        SET=$(seth call "$(eval echo "\$PIP_${token}")" 'bud(address)(uint256)' "$MCD_SPOT" | sed 's/^0*//')
+        SET=$(seth call "$(eval echo "\$PIP_${token}")" 'bud(address)(uint256)' "$MCT_SPOT" | sed 's/^0*//')
     fi
 
     if [[ "$SET" == 1 ]]; then
         ilks=$(jq -r ".tokens.${token}.ilks | keys_unsorted[]" "$CONFIG_FILE")
         for ilk in $ilks; do
-            sethSend "$MCD_SPOT" 'poke(bytes32)' "$(seth --to-bytes32 "$(seth --from-ascii "${token}-${ilk}")")"
+            sethSend "$MCT_SPOT" 'poke(bytes32)' "$(seth --to-bytes32 "$(seth --from-ascii "${token}-${ilk}")")"
         done
     fi
 
     if [[ -n "$MIGRATION" ]]; then
-        sethSend "$MCD_SPOT" 'poke(bytes32)' "$(seth --to-bytes32 "$(seth --from-ascii "SAI")")"
+        sethSend "$MCT_SPOT" 'poke(bytes32)' "$(seth --to-bytes32 "$(seth --from-ascii "SAI")")"
     fi
 done
