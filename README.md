@@ -53,7 +53,7 @@ But you can also configure the below variables manually:
 ### Chain configuration
 
 Some networks have a default config file at `config/<NETWORK>.json`, which will be used if non custom config values are set.
-A config file can be passed via param with flag `-f` allowing to execute the script in any network (e.g. `dss-deploy testchain -f <CONFIG_FILE_PATH>`).
+A config file can be passed via param with flag `-f` allowing to execute the script in any network (e.g. `tss-deploy testchain -f <CONFIG_FILE_PATH>`).
 As other option, custom config values can be loaded as an environment variable called `DDS_CONFIG_VALUES`.
 File passed by parameter overwrites the environment variable.
 
@@ -138,7 +138,7 @@ Currently, there are default config files for 3 networks:
 
 `tss-deploy testchain`
 
-It is possible to pass a value to define a testing scenario via `-c` flag (e.g. `dss-deploy testchain -c crash-bite`)
+It is possible to pass a value to define a testing scenario via `-c` flag (e.g. `tss-deploy testchain -c crash-bite`)
 
 The only case currently available is:
 
@@ -165,7 +165,7 @@ Successful deployments save their output to the following files:
 - `out/abi/`: JSON representation of the ABIs of all deployed contracts
 - `out/bin/`: .bin and .bin-runtime files of all deployed contracts
 - `out/meta/`: meta.json files of all deployed contracts
-- `out/dss-<NETWORK>.log`: output log of deployment
+- `out/tss-<NETWORK>.log`: output log of deployment
 
 ### Helper scripts
 
@@ -185,7 +185,7 @@ nix-shell --pure
 You can even run deploy scripts without having to clone this repo:
 
 ```
-nix run -f https://github.com/cleancoindev/tss-deploy-scripts/tarball/master -c dss-deploy testchain
+nix run -f https://github.com/cleancoindev/tss-deploy-scripts/tarball/master -c tss-deploy testchain
 ```
 
 Dependencies are managed through a central repository referenced in
@@ -212,7 +212,7 @@ dapp2nix clone-recursive contracts
 ## Additional Documentation
 
 - `tss-deploy` [source code](https://github.com/cleancoindev/tss-deploy)
-- `dss` is documented in the [wiki](https://github.com/makerdao/dss/wiki) and in [DEVELOPING.md](https://github.com/makerdao/dss/blob/master/DEVELOPING.md)
+- `tss` is documented in the [wiki](https://github.com/makerdao/dss/wiki) and in [DEVELOPING.md](https://github.com/makerdao/dss/blob/master/DEVELOPING.md)
 
 ## TODO
 
@@ -220,7 +220,7 @@ dapp2nix clone-recursive contracts
 
 ## Latest Mainnet deployment
 ```
-# dss mainnet deployment
+# tss mainnet deployment
 # Wed Nov 13 2019
 export DEPLOYER=0xdDb108893104dE4E1C6d0E47c42237dB4E617ACc
 export MULTICALL=0x5e227AD1969Ea493B43F840cfF78d08a6fc17796
