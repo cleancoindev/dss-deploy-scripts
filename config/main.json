@@ -27,7 +27,7 @@
   },
   "migration": {
     "tub": "0x448a5065aebb8e423f0896e6c5d525c040f59af3",
-    "ethAdapterVarName": "MCD_JOIN_ETH_A",
+    "ethAdapterVarName": "MCT_JOIN_ETH_A",
     "line": "0"
   },
   "tokens": {
