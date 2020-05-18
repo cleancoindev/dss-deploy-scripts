@@ -32,7 +32,7 @@ for token in $tokens; do
             # Set osm in spotter ilks
             ilks=$(jq -r ".tokens.${token}.ilks | keys_unsorted[]" "$CONFIG_FILE")
             for ilk in $ilks; do
-                calldata="$(seth calldata 'file(address,address,address,bytes32,bytes32,address)' "$MCD_PAUSE" "$MCD_GOV_ACTIONS" "$MCD_SPOT" "$(seth --to-bytes32 "$(seth --from-ascii "${token}-${ilk}")")" "$(seth --to-bytes32 "$(seth --from-ascii "pip")")" "$(eval echo "\$PIP_${token}")")"
+                calldata="$(seth calldata 'file(address,address,address,bytes32,bytes32,address)' "$MCT_PAUSE" "$MCT_GOV_ACTIONS" "$MCT_SPOT" "$(seth --to-bytes32 "$(seth --from-ascii "${token}-${ilk}")")" "$(seth --to-bytes32 "$(seth --from-ascii "pip")")" "$(eval echo "\$PIP_${token}")")"
                 sethSend "$PROXY_DEPLOYER" 'execute(address,bytes memory)' "$PROXY_PAUSE_ACTIONS" "$calldata"
             done
         fi
