@@ -10,4 +10,4 @@ if [[ -z "$DGD" ]]; then
 fi
 
 # shellcheck source=libexec/dss/deploy-ilk
-. "$LIBEXEC_DIR/dss/deploy-ilk" "DGD" "${1:-"A"}" "GemJoin3" 9
+. "$LIBEXEC_DIR/tss/deploy-ilk" "DGD" "${1:-"A"}" "GemJoin3" 9
