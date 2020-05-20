@@ -1,6 +1,6 @@
 # TSS deployment scripts
 
-A set of scripts that deploy [tss](http://github.com/cleancoindev/TaoStabilitySystem) to an
+A set of scripts that deploy [tss](http://github.com/takertao/dss) to an
 Ethereum chain of your choosing.
 
 ## Description
@@ -211,8 +211,8 @@ dapp2nix clone-recursive contracts
 
 ## Additional Documentation
 
-- `tss-deploy` [source code](https://github.com/cleancoindev/tss-deploy)
-- `tss` is documented in the [wiki](https://github.com/makerdao/dss/wiki) and in [DEVELOPING.md](https://github.com/makerdao/dss/blob/master/DEVELOPING.md)
+- `tss-deploy` [source code](https://github.com/takertao/dss-deploy)
+- `tss` is documented in the [wiki](https://github.com/takertao/dss/wiki) and in [DEVELOPING.md](https://github.com/takertao/dss/blob/master/DEVELOPING.md)
 
 ## TODO
 
