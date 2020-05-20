@@ -29,5 +29,5 @@ for token in $tokens; do
     fi
 done
 
-sethSend "$OSM_MOM" 'setAuthority(address)' "$MCT_ADM"
-sethSend "$OSM_MOM" 'setOwner(address)' "$MCT_PAUSE_PROXY"
+sethSend "$OSM_MOM" 'setAuthority(address)' "$MCD_ADM"
+sethSend "$OSM_MOM" 'setOwner(address)' "$MCD_PAUSE_PROXY"

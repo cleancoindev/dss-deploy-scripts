@@ -1,32 +1,32 @@
 {
-  "name": "tss-deploy-scripts",
-  "description": "MCT deployment",
+  "name": "dss-deploy-scripts",
+  "description": "MCD deployment",
   "scenarios": [
     {
       "name": "scenario0",
-      "description": "MCT - General deployment",
-      "run": "tss-deploy testchain",
+      "description": "MCD - General deployment",
+      "run": "dss-deploy testchain",
       "configPath": "config/testchain.json",
       "outPath": "out/addresses.json"
     },
     {
       "name": "scenario1",
       "description": "Example 1",
-      "run": "tss-deploy testchain",
+      "run": "dss-deploy testchain",
       "configPath": "config/testchain.json",
       "outPath": "out/addresses.json"
     },
     {
       "name": "scenario2",
       "description": "Example 2",
-      "run": "tss-deploy testchain",
+      "run": "dss-deploy testchain",
       "configPath": "config/testchain.json",
       "outPath": "out/addresses.json"
     },
     {
       "name": "scenario3",
       "description": "Example 3",
-      "run": "tss-deploy testchain",
+      "run": "dss-deploy testchain",
       "configPath": "config/testchain.json",
       "outPath": "out/addresses.json"
     }

@@ -213,33 +213,33 @@
         "url": "https://github.com/dapphub/ds-weth"
       }
     },
-    "tss-cdp-manager_ddd0f75": {
+    "dss-cdp-manager_ddd0f75": {
       "deps": {
         "ds-test": "ds-test_a4e4005",
-        "tss-deploy": "tss-deploy_679a078"
+        "dss-deploy": "dss-deploy_679a078"
       },
-      "name": "tss-cdp-manager",
+      "name": "dss-cdp-manager",
       "repo": {
-        "name": "tss-cdp-manager-ddd0f75",
+        "name": "dss-cdp-manager-ddd0f75",
         "ref": "HEAD",
         "rev": "ddd0f755735fa336e7f5ad7471163a18e0ba1f21",
-        "url": "https://github.com/cleancoindev/tss-cdp-manager"
+        "url": "https://github.com/takertao/dss-cdp-manager"
       }
     },
-    "tss-deploy-pause-proxy-actions_496d775": {
+    "dss-deploy-pause-proxy-actions_496d775": {
       "deps": {
         "ds-test": "ds-test_a4e4005",
-        "tss-deploy": "tss-deploy_679a078"
+        "dss-deploy": "dss-deploy_679a078"
       },
-      "name": "tss-deploy-pause-proxy-actions",
+      "name": "dss-deploy-pause-proxy-actions",
       "repo": {
-        "name": "tss-deploy-pause-proxy-actions-496d775",
+        "name": "dss-deploy-pause-proxy-actions-496d775",
         "ref": "HEAD",
         "rev": "496d775e9ed05f3011a4bb1cf669c80541ce04c9",
-        "url": "https://github.com/cleancoindev/tss-deploy-pause-proxy-actions"
+        "url": "https://github.com/makerdao/dss-deploy-pause-proxy-actions"
       }
     },
-    "tss-deploy_679a078": {
+    "dss-deploy_679a078": {
       "deps": {
         "ds-auth": "ds-auth_f783169",
         "ds-guard": "ds-guard_4678e1c",
@@ -248,43 +248,43 @@
         "ds-test": "ds-test_a4e4005",
         "ds-token": "ds-token_cee36a1",
         "ds-weth": "ds-weth_dfada5b",
-        "tss": "tss_4433006",
+        "dss": "dss_4433006",
         "esm": "esm_8e2d767"
       },
-      "name": "tss-deploy",
+      "name": "dss-deploy",
       "repo": {
-        "name": "tss-deploy-679a078",
+        "name": "dss-deploy-679a078",
         "ref": "HEAD",
         "rev": "679a07876d433240d0c92b65bcddd4aa00082728",
-        "url": "https://github.com/cleancoindev/tss-deploy"
+        "url": "https://github.com/takertao/dss-deploy"
       }
     },
-    "tss-proxy-actions_180a5f4": {
+    "dss-proxy-actions_180a5f4": {
       "deps": {
         "ds-test": "ds-test_a4e4005",
-        "tss-cdp-manager": "tss-cdp-manager_ddd0f75",
+        "dss-cdp-manager": "dss-cdp-manager_ddd0f75",
         "proxy-registry": "proxy-registry_59e077f"
       },
-      "name": "tss-proxy-actions",
+      "name": "dss-proxy-actions",
       "repo": {
-        "name": "tss-proxy-actions-180a5f4",
+        "name": "dss-proxy-actions-180a5f4",
         "ref": "HEAD",
         "rev": "180a5f4b130df9d97932471d17602c86416ede13",
-        "url": "https://github.com/cleancoindev/tss-proxy-actions"
+        "url": "https://github.com/makerdao/dss-proxy-actions"
       }
     },
-    "tss_4433006": {
+    "dss_4433006": {
       "deps": {
         "ds-test": "ds-test_a4e4005",
         "ds-token": "ds-token_cee36a1",
         "ds-value": "ds-value_f307171"
       },
-      "name": "tss",
+      "name": "dss",
       "repo": {
-        "name": "tss-4433006",
+        "name": "dss-4433006",
         "ref": "HEAD",
         "rev": "44330065999621834b08de1edf3b962f6bbd74c6",
-        "url": "https://github.com/cleancoindev/tss"
+        "url": "https://github.com/takertao/dss"
       }
     },
     "erc20_f322aac": {
@@ -331,7 +331,7 @@
         "name": "mkr-authority-3625950",
         "ref": "HEAD",
         "rev": "362595069dc12ee16adbcb68bf74035a50414fee",
-        "url": "https://github.com/makerdao/mkr-authority"
+        "url": "https://github.com/takertao/mkr-authority"
       }
     },
     "multicall_df1e59d": {
@@ -356,7 +356,7 @@
         "name": "osm-mom-cca3967",
         "ref": "HEAD",
         "rev": "cca396707f878d97482b02e678828a1fb824a3bc",
-        "url": "https://github.com/makerdao/osm-mom"
+        "url": "https://github.com/takertao/osm-mom"
       }
     },
     "osm_0399d52": {
@@ -370,7 +370,7 @@
         "name": "osm-0399d52",
         "ref": "HEAD",
         "rev": "0399d525256e6e1fb432d7d5d142b39738d54835",
-        "url": "https://github.com/makerdao/osm"
+        "url": "https://github.com/takertao/osm"
       }
     },
     "proxy-registry_59e077f": {
@@ -383,7 +383,7 @@
         "name": "proxy-registry-59e077f",
         "ref": "HEAD",
         "rev": "59e077f30133b059e1319a4830985da54dd2ee4b",
-        "url": "https://github.com/makerdao/proxy-registry"
+        "url": "https://github.com/takertao/proxy-registry"
       }
     },
     "sai_fe18033": {
@@ -402,21 +402,21 @@
         "name": "sai-fe18033",
         "ref": "solc-0.5",
         "rev": "fe1803370e89cc192e24e50bed833ba0a6c9f4f7",
-        "url": "https://github.com/makerdao/sai"
+        "url": "https://github.com/takertao/sai"
       }
     },
-    "sct-mct-migration_e7e7da5": {
+    "scd-mcd-migration_e7e7da5": {
       "deps": {
         "ds-test": "ds-test_a4e4005",
-        "tss-cdp-manager": "tss-cdp-manager_ddd0f75",
+        "dss-cdp-manager": "dss-cdp-manager_ddd0f75",
         "sai": "sai_fe18033"
       },
-      "name": "sct-mct-migration",
+      "name": "scd-mcd-migration",
       "repo": {
-        "name": "sct-mct-migration-e7e7da5",
+        "name": "scd-mcd-migration-e7e7da5",
         "ref": "HEAD",
         "rev": "e7e7da53a566a579dc4bbbe3653562f0e8a51c29",
-        "url": "https://github.com/cleancoindev/sct-mct-migration"
+        "url": "https://github.com/makerdao/scd-mcd-migration"
       }
     },
     "testchain-medians_7f457c3": {
@@ -442,7 +442,7 @@
         "name": "token-faucet-34a44c5",
         "ref": "HEAD",
         "rev": "34a44c5314d9f1d8dce346d4853eb78823fc1061",
-        "url": "https://github.com/cleancoindev/token-faucet"
+        "url": "https://github.com/takertao/token-faucet"
       }
     },
     "vote-proxy_3c4f8dd": {
@@ -456,25 +456,25 @@
         "name": "vote-proxy-3c4f8dd",
         "ref": "HEAD",
         "rev": "3c4f8ddc815d047019518fb8dce14d6997c63f3f",
-        "url": "https://github.com/makerdao/vote-proxy"
+        "url": "https://github.com/takertao/vote-proxy"
       }
     }
   },
   "this": {
     "deps": {
-      "tss-deploy": "tss-deploy_679a078",
-      "tss-deploy-pause-proxy-actions": "tss-deploy-pause-proxy-actions_496d775",
-      "tss-proxy-actions": "tss-proxy-actions_180a5f4",
+      "dss-deploy": "dss-deploy_679a078",
+      "dss-deploy-pause-proxy-actions": "dss-deploy-pause-proxy-actions_496d775",
+      "dss-proxy-actions": "dss-proxy-actions_180a5f4",
       "mkr-authority": "mkr-authority_3625950",
       "multicall": "multicall_df1e59d",
       "osm": "osm_0399d52",
       "osm-mom": "osm-mom_cca3967",
-      "sct-mct-migration": "sct-mct-migration_e7e7da5",
+      "scd-mcd-migration": "scd-mcd-migration_e7e7da5",
       "testchain-medians": "testchain-medians_7f457c3",
       "token-faucet": "token-faucet_34a44c5",
       "vote-proxy": "vote-proxy_3c4f8dd"
     },
-    "name": "tss-deploy-scripts"
+    "name": "dss-deploy-scripts"
   },
   "version": 1
 }

@@ -118,84 +118,84 @@ checkInOsmMom() {
 tokens=$(jq -r ".tokens | keys_unsorted[]" "$CONFIG_FILE")
 
 # vat
-checkRely "MCT_VAT" "MCT_DEPLOY" "NOT_AUTHED"
-checkRely "MCT_VAT" "MCT_CAT" "AUTHED"
-checkRely "MCT_VAT" "MCT_JUG" "AUTHED"
-checkRely "MCT_VAT" "MCT_POT" "AUTHED"
-checkRely "MCT_VAT" "MCT_SPOT" "AUTHED"
-checkRely "MCT_VAT" "MCT_END" "AUTHED"
-checkRely "MCT_VAT" "MCT_PAUSE_PROXY" "AUTHED"
+checkRely "MCD_VAT" "MCD_DEPLOY" "NOT_AUTHED"
+checkRely "MCD_VAT" "MCD_CAT" "AUTHED"
+checkRely "MCD_VAT" "MCD_JUG" "AUTHED"
+checkRely "MCD_VAT" "MCD_POT" "AUTHED"
+checkRely "MCD_VAT" "MCD_SPOT" "AUTHED"
+checkRely "MCD_VAT" "MCD_END" "AUTHED"
+checkRely "MCD_VAT" "MCD_PAUSE_PROXY" "AUTHED"
 for token in $tokens; do
     ilks=$(jq -r ".tokens.${token}.ilks | keys_unsorted[]" "$CONFIG_FILE")
     for ilk in $ilks; do
-        checkRely "MCT_VAT" "MCT_JOIN_${token}_${ilk}" "AUTHED"
-        checkRely "MCT_JOIN_${token}_${ilk}" "MCT_PAUSE_PROXY" "AUTHED"
-        checkRely "MCT_JOIN_${token}_${ilk}" "DEPLOYER" "NOT_AUTHED"
+        checkRely "MCD_VAT" "MCD_JOIN_${token}_${ilk}" "AUTHED"
+        checkRely "MCD_JOIN_${token}_${ilk}" "MCD_PAUSE_PROXY" "AUTHED"
+        checkRely "MCD_JOIN_${token}_${ilk}" "DEPLOYER" "NOT_AUTHED"
     done
 done
 if [[ -n "$MIGRATION" ]]; then
-    checkRely "MCT_VAT" "MCT_JOIN_SAI" "AUTHED"
-    checkRely "MCT_JOIN_SAI" "MCT_PAUSE_PROXY" "AUTHED"
-    checkRely "MCT_JOIN_SAI" "MIGRATION" "AUTHED"
-    checkRely "MCT_JOIN_SAI" "DEPLOYER" "NOT_AUTHED"
+    checkRely "MCD_VAT" "MCD_JOIN_SAI" "AUTHED"
+    checkRely "MCD_JOIN_SAI" "MCD_PAUSE_PROXY" "AUTHED"
+    checkRely "MCD_JOIN_SAI" "MIGRATION" "AUTHED"
+    checkRely "MCD_JOIN_SAI" "DEPLOYER" "NOT_AUTHED"
 fi
 
 # cat
-checkRely "MCT_CAT" "MCT_DEPLOY" "NOT_AUTHED"
-checkRely "MCT_CAT" "MCT_END" "AUTHED"
-checkRely "MCT_CAT" "MCT_PAUSE_PROXY" "AUTHED"
+checkRely "MCD_CAT" "MCD_DEPLOY" "NOT_AUTHED"
+checkRely "MCD_CAT" "MCD_END" "AUTHED"
+checkRely "MCD_CAT" "MCD_PAUSE_PROXY" "AUTHED"
 
 # vow
-checkRely "MCT_VOW" "MCT_DEPLOY" "NOT_AUTHED"
-checkRely "MCT_VOW" "MCT_CAT" "AUTHED"
-checkRely "MCT_VOW" "MCT_END" "AUTHED"
-checkRely "MCT_VOW" "MCT_PAUSE_PROXY" "AUTHED"
+checkRely "MCD_VOW" "MCD_DEPLOY" "NOT_AUTHED"
+checkRely "MCD_VOW" "MCD_CAT" "AUTHED"
+checkRely "MCD_VOW" "MCD_END" "AUTHED"
+checkRely "MCD_VOW" "MCD_PAUSE_PROXY" "AUTHED"
 
 # jug
-checkRely "MCT_JUG" "MCT_DEPLOY" "NOT_AUTHED"
-checkRely "MCT_JUG" "MCT_PAUSE_PROXY" "AUTHED"
+checkRely "MCD_JUG" "MCD_DEPLOY" "NOT_AUTHED"
+checkRely "MCD_JUG" "MCD_PAUSE_PROXY" "AUTHED"
 
 # pot
-checkRely "MCT_POT" "MCT_DEPLOY" "NOT_AUTHED"
-checkRely "MCT_POT" "MCT_PAUSE_PROXY" "AUTHED"
+checkRely "MCD_POT" "MCD_DEPLOY" "NOT_AUTHED"
+checkRely "MCD_POT" "MCD_PAUSE_PROXY" "AUTHED"
 
 # dai
-checkRely "MCT_TAO" "MCT_DEPLOY" "NOT_AUTHED"
-checkRely "MCT_TAO" "MCT_JOIN_TAO" "AUTHED"
+checkRely "MCD_DAI" "MCD_DEPLOY" "NOT_AUTHED"
+checkRely "MCD_DAI" "MCD_JOIN_DAI" "AUTHED"
 
 # spotter
-checkRely "MCT_SPOT" "MCT_DEPLOY" "NOT_AUTHED"
-checkRely "MCT_SPOT" "MCT_PAUSE_PROXY" "AUTHED"
+checkRely "MCD_SPOT" "MCD_DEPLOY" "NOT_AUTHED"
+checkRely "MCD_SPOT" "MCD_PAUSE_PROXY" "AUTHED"
 
 # flap
-checkRely "MCT_FLAP" "MCT_DEPLOY" "NOT_AUTHED"
-checkRely "MCT_FLAP" "MCT_VOW" "AUTHED"
-checkRely "MCT_FLAP" "MCT_PAUSE_PROXY" "AUTHED"
+checkRely "MCD_FLAP" "MCD_DEPLOY" "NOT_AUTHED"
+checkRely "MCD_FLAP" "MCD_VOW" "AUTHED"
+checkRely "MCD_FLAP" "MCD_PAUSE_PROXY" "AUTHED"
 
 # flop
-checkRely "MCT_FLOP" "MCT_DEPLOY" "NOT_AUTHED"
-checkRely "MCT_FLOP" "MCT_VOW" "AUTHED"
-checkRely "MCT_FLOP" "MCT_PAUSE_PROXY" "AUTHED"
+checkRely "MCD_FLOP" "MCD_DEPLOY" "NOT_AUTHED"
+checkRely "MCD_FLOP" "MCD_VOW" "AUTHED"
+checkRely "MCD_FLOP" "MCD_PAUSE_PROXY" "AUTHED"
 
 # end
-checkRely "MCT_END" "MCT_DEPLOY" "NOT_AUTHED"
-checkRely "MCT_END" "MCT_ESM" "AUTHED"
-checkRely "MCT_END" "MCT_PAUSE_PROXY" "AUTHED"
+checkRely "MCD_END" "MCD_DEPLOY" "NOT_AUTHED"
+checkRely "MCD_END" "MCD_ESM" "AUTHED"
+checkRely "MCD_END" "MCD_PAUSE_PROXY" "AUTHED"
 
 #flips
 for token in $tokens; do
     ilks=$(jq -r ".tokens.${token}.ilks | keys_unsorted[]" "$CONFIG_FILE")
     for ilk in $ilks; do
-        checkRely "MCT_FLIP_${token}_${ilk}" "MCT_DEPLOY" "NOT_AUTHED"
-        checkRely "MCT_FLIP_${token}_${ilk}" "MCT_CAT" "AUTHED"
-        checkRely "MCT_FLIP_${token}_${ilk}" "MCT_END" "AUTHED"
-        checkRely "MCT_FLIP_${token}_${ilk}" "MCT_PAUSE_PROXY" "AUTHED"
+        checkRely "MCD_FLIP_${token}_${ilk}" "MCD_DEPLOY" "NOT_AUTHED"
+        checkRely "MCD_FLIP_${token}_${ilk}" "MCD_CAT" "AUTHED"
+        checkRely "MCD_FLIP_${token}_${ilk}" "MCD_END" "AUTHED"
+        checkRely "MCD_FLIP_${token}_${ilk}" "MCD_PAUSE_PROXY" "AUTHED"
     done
 done
 if [[ -n "$MIGRATION" ]]; then
-    checkRely "MCT_FLIP_SAI" "MCT_DEPLOY" "NOT_AUTHED"
-    checkRely "MCT_FLIP_SAI" "MCT_END" "AUTHED"
-    checkRely "MCT_FLIP_SAI" "MCT_PAUSE_PROXY" "AUTHED"
+    checkRely "MCD_FLIP_SAI" "MCD_DEPLOY" "NOT_AUTHED"
+    checkRely "MCD_FLIP_SAI" "MCD_END" "AUTHED"
+    checkRely "MCD_FLIP_SAI" "MCD_PAUSE_PROXY" "AUTHED"
 fi
 
 # faucet
@@ -205,32 +205,32 @@ if [[ -z "$faucet" ]]; then
 fi
 
 # pause
-checkOwner "MCT_PAUSE" "ZERO_ADDR"
-checkAuthority "MCT_PAUSE" "MCT_ADM"
+checkOwner "MCD_PAUSE" "ZERO_ADDR"
+checkAuthority "MCD_PAUSE" "MCD_ADM"
 
 # chief
-checkOwner "MCT_ADM" "ZERO_ADDR"
-checkAuthority "MCT_ADM" "MCT_ADM"
+checkOwner "MCD_ADM" "ZERO_ADDR"
+checkAuthority "MCD_ADM" "MCD_ADM"
 
 # pip SAI
 if [[ -n "$MIGRATION" ]]; then
-    checkOwner "PIP_SAI" "MCT_PAUSE_PROXY"
+    checkOwner "PIP_SAI" "MCD_PAUSE_PROXY"
     checkAuthority "PIP_SAI" "ZERO_ADDR"
 fi
 
 # gov guard
 if [[ -n "$GOV_GUARD" ]]; then
-    checkRoot "GOV_GUARD" "MCT_PAUSE_PROXY"
+    checkRoot "GOV_GUARD" "MCD_PAUSE_PROXY"
 fi
 
 # gov
-canCall "MCT_FLOP" "MCT_GOV" "mint(address,uint256)"
-canCall "MCT_FLAP" "MCT_GOV" "burn(address,uint256)"
+canCall "MCD_FLOP" "MCD_GOV" "mint(address,uint256)"
+canCall "MCD_FLAP" "MCD_GOV" "burn(address,uint256)"
 
 # iou
-if [[ -n "$MCT_IOU" ]]; then
-    checkOwner "MCT_IOU" "MCT_ADM"
-    checkAuthority "MCT_IOU" "ZERO_ADDR"
+if [[ -n "$MCD_IOU" ]]; then
+    checkOwner "MCD_IOU" "MCD_ADM"
+    checkAuthority "MCD_IOU" "ZERO_ADDR"
 fi
 
 # osms and medians whitelist
@@ -240,8 +240,8 @@ for token in $tokens; do
     osmDelay=$(jq -r ".tokens.${token} | .pipDeploy | .osmDelay | values" "$CONFIG_FILE")
 
     if [[ "$pipAddr" != "" || "$type" == "median" || "$osmDelay" -gt 0 ]]; then
-        checkWhitelist "PIP_${token}" "MCT_SPOT"
-        checkWhitelist "PIP_${token}" "MCT_END"
+        checkWhitelist "PIP_${token}" "MCD_SPOT"
+        checkWhitelist "PIP_${token}" "MCD_END"
     fi
 
     if [[ "$pipAddr" == "" && "$type" == "median" && "$osmDelay" -gt 0 ]]; then
